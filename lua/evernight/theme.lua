@@ -20,10 +20,10 @@ function M.setup(config)
     CursorColumn = { bg = c.bg1 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine = { bg = c.bg1 }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory = { fg = c.green }, -- directory names (and other special names in listings)
-    DiffAdd = { bg = c.git.add }, -- diff mode: Added line |diff.txt|
-    DiffChange = { bg = c.git.change }, -- diff mode: Changed line |diff.txt|
-    DiffDelete = { bg = c.git.delete }, -- diff mode: Deleted line |diff.txt|
-    DiffText = { bg = c.git.text }, -- diff mode: Changed text within a changed line |diff.txt|
+    DiffAdd = { bg = c.git.add, fg = c.bg }, -- diff mode: Added line |diff.txt|
+    DiffChange = { bg = c.git.change, fg = c.bg }, -- diff mode: Changed line |diff.txt|
+    DiffDelete = { bg = c.git.delete, fg = c.bg }, -- diff mode: Deleted line |diff.txt|
+    DiffText = { bg = c.git.text, fg = c.bg }, -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer = { fg = c.bg }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     -- TermCursor  = { }, -- cursor in a focused terminal
     -- TermCursorNC= { }, -- cursor in an unfocused terminal
@@ -285,8 +285,8 @@ function M.setup(config)
     NeogitHunkHeader = { bg = c.bg1, fg = c.fg },
     NeogitHunkHeaderHighlight = { bg = c.bg2, fg = c.blue },
     NeogitDiffContextHighlight = { bg = c.bg2, fg = c.fgd },
-    NeogitDiffDeleteHighlight = { fg = c.git.delete, bg = c.git.delete },
-    NeogitDiffAddHighlight = { fg = c.git.add, bg = c.git.add },
+    NeogitDiffDeleteHighlight = { fg = c.git.delete, bg = c.bg },
+    NeogitDiffAddHighlight = { fg = c.git.add, bg = c.bg },
 
     -- GitGutter
     GitGutterAdd = { fg = c.git.add }, -- diff mode: Added line |diff.txt|
